@@ -1,0 +1,95 @@
+LayoutPrincipal:
+<LayoutPrincipal>:
+    orientation:"vertical"
+    MDBoxLayout:
+        canvas.before:
+            Color:
+                rgba: (0,.7,1,1)
+            Rectangle:
+                size:self.size
+                pos:self.pos
+        size_hint:(1,.1)
+        padding:10
+        MDLabel:
+            text:"DubListConverter"
+            color:"white"
+            #font_size: 25
+            font_style: "H6"
+        AnchorLayout:
+            anchor_x:"right"
+            MDBoxLayout:
+                spacing: 5
+                adaptive_size: True
+
+
+
+                MDRoundFlatIconButton:
+                    icon: "folder"
+                    text: "Elegir archivo"
+                    text_color: 1, 1, 1, .9
+                    icon_color: 1, 1, 1, .9
+                    line_color: 1, 1, 1, .2
+                    on_release: root.seleccionar_archivo()
+
+                MDRoundFlatIconButton:
+                    icon: "file-pdf-box"
+                    text: "Tutorial"
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, .9
+                    icon_color: 1, 1, 1, .9
+                    line_color: 1, 1, 1, .2
+                    on_release: root.tutorial()
+                    #underline_color: 1,1,1,1
+
+                MDRoundFlatIconButton:
+                    icon:"broom"
+                    text: "Limpiar"
+                    text_color: 1, 1, 1, .9
+                    icon_color: 1, 1, 1, .9
+                    line_color: 1, 1, 1, .2
+                    on_release: root.limpiar()
+                MDRoundFlatIconButton:
+                    icon:"account-question"
+                    text: "Acerca de"
+                    text_color: 1, 1, 1, .9
+                    icon_color: 1, 1, 1, .9
+                    line_color: 1, 1, 1, .2
+                    on_release: root.show_acerca_de()
+    MDBoxLayout:
+        orientation: "vertical"
+        canvas.before:
+            Color:
+                rgba: (0,0,0,.9)
+            Rectangle:
+                size:self.size
+        MDLabel:
+            id:eti1
+            text: root.etiqueta
+            font_style: "Subtitle1"
+            halign: "center"
+            color:"white"
+
+
+<Acerca_de>:
+    orientation:"vertical"
+    MDBoxLayout:
+        orientation:"vertical"
+        Label:
+            text:root.texto_etiqueta
+            color:(1,1,1,1)
+    MDBoxLayout:
+        orientation:"vertical"
+        size_hint:(1,.2)
+        Label:
+            text: "Copyrigth 2022-Todos los derechos reservados"
+            color:(1,1,1,1)
+            font_size:11
+        Label:
+            text: "Clic fuera del recuadro para cerrar"
+            color:(1,1,1,1)
+            font_size:9
+
+
+
+
+
